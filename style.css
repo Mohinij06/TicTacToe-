@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    scroll-behavior: smooth;
+}
+html{
+    font-size: 100%;
+    overflow-x: hidden;
+}
+body{
+    background: #043273;
+    color: #fff;
+
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container h1{
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+.game_board{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+.cell{
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 60px;
+    font-weight: 600;
+    height: 120px;
+    cursor: pointer;
+}
+.cell:first-child, 
+.cell:nth-child(2), 
+.cell:nth-child(3){
+    border-top: none;
+}
+/* .cell:nth-child(3), 
+.cell:nth-child(6),
+.cell:nth-child(9)
+{
+    border-right: none;
+} */
+
+.cell:nth-child(3n){
+    border-right: none;
+}
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:nth-child(n+7){
+    border-bottom: none;
+}
+
+#message{
+    font-size: 28px;
+    margin-top: 30px;
+}
+button{
+    border: none;
+    background: #02001275;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-block: 18px;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover{
+    background: #7272e1;
+}
+@media screen and (max-width: 550px){
+    .container h1{
+        font-size: 24px;
+    }
+
+    .game_board{
+        grid-template-columns: repeat(3, minmax(90px,1fr));
+    }
+    .cell{
+        height: 90px;
+    }
+}
+    
